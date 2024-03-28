@@ -1,0 +1,259 @@
+/* note: Reset Css-begin */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    outline: none;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* note: Reset Css-end */
+
+/* note:Css Variables-Begin */
+:root {
+    --blue-to-dark-blue-linear-gradient: 135deg, rgb(2, 3, 129) 0%, rgb(40, 116, 252) 100%;
+    --yellow-to-blue-linear-gradient: 135deg, rgb(255, 245, 203) 0%, rgb(182, 227, 212) 50%, rgb(51, 167, 181) 100%;
+    --slate-400-gray: #abb8c3;
+    --white: #fff;
+    --box-shadow-sm: 6px 6px 9px rgba(0, 0, 0, 0.2);
+    --box-shadow-deep: 12px 12px 50px rgba(0, 0, 0, 0.4);
+    --light-white: rgba(9, 13, 35, .001);
+    --dark: #0000;
+    --blur-white: rgba(255, 255, 255, 0.08);
+    --sora: "Sora", sans-serif;
+    --oxanium: "Oxanium", sans-serif;
+}
+
+/* note:Css Variables-End */
+
+/* note:Sora san-serif */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+/* note:Sora san-serif */
+/* note:Oxanium san-serif */
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
+/* note:Oxanium san-serif */
+
+/* note:Clip Path */
+/*  */
+/* note:Clip Path */
+body {
+    overflow-x: hidden;
+}
+
+/* note:Header-Section-Begin */
+header {
+    max-width: 1350px;
+    max-height: 439px;
+    position: relative;
+    z-index: 1000;
+    padding: 40px 70px;
+}
+
+.navbar-container {
+    height: 90px;
+    background: var(--blur-white);
+    backdrop-filter: blur(40px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.navbar-container .logo-section {
+    cursor: pointer;
+}
+
+.navbar-container .icon-section {
+    cursor: pointer;
+}
+
+.navbar-container .nav-section {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.navbar-container .nav-section #nav-links {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.nav-section .hover-block {
+    position: absolute;
+    top: -36px;
+    left: 0;
+    width: 128px;
+    height: 90px;
+    background: var(--blur-white);
+    z-index: -1;
+    transition: all .5s ease-in-out;
+
+}
+
+.navbar-container #nav-links li a:not(.pages-submenu li a) {
+    color: var(--white);
+    font-family: var(--oxanium);
+    font-size: 18px;
+    font-weight: 700;
+    padding: 40px;
+    width: 100%;
+}
+
+.slider-image-section {
+    background: url(../assets/img/robot-header-slider-img.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 540px;
+    top: 0;
+    left: 0;
+    animation: scaled-img 12s linear infinite;
+}
+
+
+.icon-section svg {
+    stroke: var(--white);
+    fill: transparent;
+}
+
+.icon-section #left-top-p {
+    transition: all .2s ease-in;
+}
+
+.icon-section svg:hover #left-top-p {
+    fill: var(--white);
+}
+
+.icon-section #right-top-p {
+    transition: all .5s ease-in;
+}
+
+.icon-section svg:hover #right-top-p {
+    fill: var(--white);
+}
+
+.icon-section #bottom-center-p {
+    transition: all .3s ease-in;
+}
+
+.icon-section svg:hover #bottom-center-p {
+    fill: var(--white);
+}
+
+/* note:Header-Section-End */
+
+/* note:Slider-Text-Container-Begin */
+
+.text-slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow: hidden;
+    padding: 50px 0;
+    flex-direction: column;
+
+
+}
+
+.text-slider-container #first-img {
+    animation: slider-text 3s linear infinite;
+
+}
+
+.text-slider-container #second-img {
+    animation: slider-text-2 3s linear infinite;
+    z-index: -1;
+}
+
+.text-slider-container .text-section {
+    position: relative;
+
+}
+
+.text-slider-container .text-section #second-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+
+
+@keyframes slider-text {
+    0% {
+        transform: translateY(80%);
+    }
+
+    50%,
+    60% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-200%);
+        opacity: 0;
+    }
+
+}
+
+@keyframes slider-text-2 {
+    0% {
+        transform: scale(1);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    75%,
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}
+
+.text-slider-container .bottom-section button {
+    width: 166px;
+    height: 55px;
+    margin-top: 100px;
+    clip-path: polygon(7% 0, 80% 0%, 100% 0, 100% 94%, 93% 100%, 0 100%, 0% 80%, 0 6%);
+    border: none;
+    background: var(--blur-white);
+    backdrop-filter: blur(40px);
+    padding: 15px;
+    cursor: pointer;
+}
+
+.text-slider-container .bottom-section button span a {
+    color: var(--white);
+    font-size: 15px;
+}
+
+.text-slider-container .bottom-section button span {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn {
+    position: relative;
+}
+
+
+
+.text-slider-container .bottom-section button span svg {
+    color: var(--white);
+}
+
+/* note:Slider-Text-Container-End */
