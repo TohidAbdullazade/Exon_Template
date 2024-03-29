@@ -1,6 +1,15 @@
 // note:Selectors
 let links = document.querySelectorAll(".nav-section li #header-nav-span a");
 let hoverBlock = document.querySelector(".hover-block");
+let textSliderContainer = document.querySelector(".text-slider-container");
+let textSection = document.querySelector(".text-section");
+let textSectionImg = document.querySelector(".text-section img");
+let sliderButton = document.querySelector(".bottom-section button");
+let fullBackgroundSlider = document.querySelector(".slider-image-section ");
+let fullBackgroundSliderImg = document.querySelector(
+  ".slider-image-section img"
+);
+console.log(fullBackgroundSliderImg);
 
 // note:Hovered Background Effect
 links.forEach((a, index) => {
@@ -35,3 +44,7 @@ links.forEach((a, index) => {
     hoverBlock.style.width = "";
   });
 });
+
+// note:Slider-Function
+
+

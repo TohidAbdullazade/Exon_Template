@@ -35,9 +35,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
 /* note:Oxanium san-serif */
 
-/* note:Clip Path */
-/*  */
-/* note:Clip Path */
+
 body {
     overflow-x: hidden;
 }
@@ -104,10 +102,6 @@ header {
 }
 
 .slider-image-section {
-    background: url(../assets/img/robot-header-slider-img.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
     position: absolute;
     width: 100%;
     height: 540px;
@@ -115,7 +109,9 @@ header {
     left: 0;
     animation: scaled-img 12s linear infinite;
 }
-
+.slider-image-section img{
+    object-fit: cover;
+}
 
 .icon-section svg {
     stroke: var(--white);
@@ -158,17 +154,16 @@ header {
     overflow: hidden;
     padding: 50px 0;
     flex-direction: column;
-
-
+    position: relative;
 }
 
 .text-slider-container #first-img {
-    animation: slider-text 3s linear infinite;
+    animation: slider-text 3s linear 1;
 
 }
 
 .text-slider-container #second-img {
-    animation: slider-text-2 3s linear infinite;
+    animation: slider-text-2 3s linear 1;
     z-index: -1;
 }
 
@@ -233,6 +228,27 @@ header {
     backdrop-filter: blur(40px);
     padding: 15px;
     cursor: pointer;
+    animation: slider-btn 7s linear 1;
+    position: relative;
+}
+
+.text-slider-container .bottom-section button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: linear-gradient(var(--blue-to-dark-blue-linear-gradient));
+    backdrop-filter: blur(40px);
+    width: 0;
+    transition: all .3s ease-in-out;
+}
+
+.text-slider-container .bottom-section button:hover::after {
+    width: 100%;
+
 }
 
 .text-slider-container .bottom-section button span a {
@@ -250,6 +266,21 @@ header {
     position: relative;
 }
 
+@keyframes slider-btn {
+    0% {
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 0;
+
+    }
+
+    100% {
+        opacity: 1;
+
+    }
+}
 
 
 .text-slider-container .bottom-section button span svg {
